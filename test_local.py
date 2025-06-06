@@ -43,22 +43,22 @@ def test_model():
         result = predict({'features': test_case['features']})
 
         if 'error' in result:
-            print(f"❌ Prediction failed: {result['error']}")
+            print(f"Prediction failed: {result['error']}")
         else:
-            print(f"✅ Predicted class: {result['prediction']}")
+            print(f"Predicted class: {result['prediction']}")
             print(f"   Confidence: {result['confidence']:.4f}")
             print(f"   All probabilities: {result['all_probabilities']}")
     print("\n4. Testing error handling...")
     error_test = predict({'features': [1.0, 2.0]}) 
     if 'error' in error_test:
-        print("✅ Error handling works for wrong input size")
+        print("Error handling works for wrong input size")
     else:
-        print("❌ Error handling failed")
+        print("Error handling failed")
     error_test2 = predict({})
     if 'error' in error_test2:
-        print("✅ Error handling works for missing features")
+        print("Error handling works for missing features")
     else:
-        print("❌ Error handling failed")
+        print("Error handling failed")
 
     print("\n" + "=" * 50)
     print("LOCAL TESTING COMPLETED!")
